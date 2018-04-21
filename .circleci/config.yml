@@ -26,11 +26,11 @@ jobs:
       - run:
          name: Instalar curl
          command: sudo apt-get install curl
-        
+      
       - run:
          name: Descargar getcomposer
          command: sudo php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-     
-     - run:
+      
+      - run:
          name: Instalar composer
          ommand: sudo php composer-setup.php
