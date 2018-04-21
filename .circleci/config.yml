@@ -13,28 +13,24 @@ jobs:
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/mysql:9.4
-
+      
     working_directory: /var/www/html
-
+    
     steps:
-      -run:
+      - run:
         name: permisos a la carpeta del proyecto
         command: sudo chown -R circleci:circleci /var/www/html
+        
       - checkout
       
-      -run:
+      - run:
         name: Instalar curl
         command: sudo apt-get install curl
-
-      -run:
+        
+      - run:
         name: Descargar getcomposer
         command: sudo php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
      
-     -run:
+     - run:
         name: Instalar composer
         command: sudo php composer-setup.php
-      
-
-      
-      # run tests!
-      - run: phpunit
