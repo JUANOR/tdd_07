@@ -18,19 +18,19 @@ jobs:
     
     steps:
       - run:
-        name: permisos a la carpeta del proyecto
-        command: sudo chown -R circleci:circleci /var/www/html
+         name: permisos a la carpeta del proyecto
+         command: sudo chown -R circleci:circleci /var/www/html
         
       - checkout
       
       - run:
-        name: Instalar curl
-        command: sudo apt-get install curl
+         name: Instalar curl
+         command: sudo apt-get install curl
         
       - run:
-        name: Descargar getcomposer
-        command: sudo php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+         name: Descargar getcomposer
+         command: sudo php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
      
      - run:
-        name: Instalar composer
-        command: sudo php composer-setup.php
+         name: Instalar composer
+         ommand: sudo php composer-setup.php
