@@ -42,3 +42,9 @@ jobs:
       - run:
          name: Move Dependencias
          command: mv vendor/ /var/www/html/v1/
+         
+      - run:
+         name: ls
+         command:
+           ls
+           v1/vendor/bin/phpunit --bootstrap Model/Usuarios.php --testdox Tests
