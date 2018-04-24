@@ -34,3 +34,11 @@ jobs:
       - run:
          name: Instalar composer
          ommand: sudo php composer-setup.php
+         
+      - run:
+         name: Install dependencies
+         command: /var/www/html/composer.phar install --no-interaction
+      
+      - run:
+         name: Move Dependencias
+         command: mv vendor/ /var/www/html/v1/
