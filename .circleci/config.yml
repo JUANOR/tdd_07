@@ -48,3 +48,17 @@ jobs:
          command:
            ls
            v1/vendor/bin/phpunit --bootstrap Model/Usuarios.php --testdox Tests
+           
+      - run:
+          shell: /bin/bash
+          command:
+            mkdir -p phpunit
+            v1/vendor/bin/phpunit --log-junit phpunit/junit.xml --bootstrap Model/Usuarios.php Tests
+            echo "done"
+          when: always
+       
+       - store test_results:
+           path: phpunit
+       
+       - store_artifacts:
+           path: phpunit
